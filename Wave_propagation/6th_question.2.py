@@ -105,8 +105,8 @@ def w_n(n): # Calculates the n natural frequency
 
     return w
 
-n = [1001,1002,1003,1004]
-# n = [1,2,3,4]
+# n = [1001,1002,1003,1004]
+n = [1,2,3,4]
 
 for i in range(4):
     w[i] = w_n(n[i])
@@ -116,14 +116,14 @@ print('Omega:', w)
 for i in range(4):
     H_w[i] = np.abs(H(w[i]))
 
-w_plus = np.linspace(w[0]*(1-6.87e-4), w[-1]*(1+6.87e-4),N)
-# w_plus = np.linspace(w[0]*(1-9.7e-1), w[-1]*(1+6.87e-4),N)
+# w_plus = np.linspace(w[0]*(1-6.87e-4), w[-1]*(1+6.87e-4),N)
+w_plus = np.linspace(w[0]*(1-9.7e-1), w[-1]*(1+6.87e-4),N)
 
 for i in range(len(H_w_plus)):
     H_w_plus[i] = np.abs(H(w_plus[i]))
 
-# title = str('1st to 4th Natural Frequency')
-title = str('1001th to 1004th Natural Frequency')
+title = str('1st to 4th Natural Frequency')
+# title = str('1001th to 1004th Natural Frequency')
 plt.figure(title)
 plt.plot(w_plus, H_w_plus)
 # plt.scatter(w, H_w, color = 'green')
